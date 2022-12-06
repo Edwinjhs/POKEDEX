@@ -25,10 +25,22 @@
         </li>
 
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Find Your Pokemon Here" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex" role="search" onsubmit='searchPokemon(event)'>
+        <input class="form-control me-2" type="search" placeholder="Find Your Pokemon Here" aria-label="Search" onsubmit="searchPokemon(event)">
+        <button class="btn btn-outline-success" type="submit" onsubmit="searchPokemon(event)">Search</button>
       </form>
+      <div data-poke-card class="poke-card">
+        <div data-poke-name>search pokemon</div>
+        <div data-poke-img-container class="img-container">
+          <img data-poke-img class="poke-img" src="../../assets/img/pokelogo.png">
+        </div>
+        <div data-poke-id></div>
+        <div data-poke-hp></div>
+        <div data-poke-att></div>
+        <div data-poke-weight></div>
+        <div data-poke-types class="poke-types"></div>
+        <div data-poke-stats class="poke-stats"></div>
+      </div>
     </div>
   </div>
 </nav>
