@@ -1,10 +1,14 @@
-<div class="pokemon-grid" >
-  <a href="#">
+<form class="d-flex"  (ngSubmit)="searchPokemon($event)">
+  <input class="form-control me-2" type="search" placeholder="Find Your Pokemon Here" aria-label="Search" #buscar (input)="searchPokemon(buscar.value)">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
 
-  <div class="box" *ngFor='let pokemon of pokemons | paginate:{ itemsPerPage: 10, currentPage:page, totalItems: totalPokemons}'>
+  <div *ngIf="pokemonnotfound"> Pokemon no encontrado </div>
+  <div class="pokemon-grid" >
+  <a href="#">
+  <div class="box" *ngFor='let pokemon of pokemons | paginate:{ itemsPerPage: 10, currentPage:page, totalItems: pokemons.length}' >
     <div class="pokemon-check-id"><h2> {{ pokemon.name }} </h2><p>{{ pokemon.id }}</p></div>
     <div class="img-type">
-      <input type="checkbox">
       <img [src]="pokemon.sprites.front_default" alt="pokemon" class="pokemon-list">
 
       <div><b>type:</b><br/><span class="label type-{{ type_pokemon.type.name }}" *ngFor=" let type_pokemon of pokemon.types"> {{ type_pokemon.type.name }} </span></div>
@@ -23,16 +27,14 @@
       <p><b>Weight:</b>
         {{ pokemon.weight }} pounds</p>
     </div>
+    <button type="submit">LO QUIERO</button>
   </div>
-
-
-
-
-
-
 
   </a>
 </div>
-<pagination-controls (pageChange)= "page= $event; pokemons = []; OnchangePages($event); ">
-
+<pagination-controls
+previousLabel="Prev"
+nextLabel="Next"
+(pageChange)="OnchangePages($event)"
+>
 </pagination-controls>

@@ -4,7 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'inicio',pathMatch:'full'},
+  // {path: '', redirectTo:'inicio',pathMatch:'full'},
   {path: 'inicio', component: InicioComponent},
   {path:'header', component: HeaderComponent}
 
