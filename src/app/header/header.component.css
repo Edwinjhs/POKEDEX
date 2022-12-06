@@ -1,0 +1,34 @@
+.header-pokedex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5px;
+  text-align: center;
+  background-color: #026ECB;
+}
+.header-pokedex h1 {
+  color: white;
+}
+
+.buscador form {
+  display: flex;
+}
+
+.all-body {
+  background-color: #026ECB;
+}
+
+.equiposelect {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.armatuequipo {
+  display: flex;
+  flex-flow: row wrap;
+}
+.armatuequipo div {
+  width: 50px;
+}/*# sourceMappingURL=header.component.css.map */
